@@ -31,5 +31,5 @@ jobs:
               git config --global user.email "you@example.com"
               git config --global user.name "Your Name"
               git add .
-              git commit -m "Add file from GitHub Actions"
+              git commit --allow-empty -m ":rocket: chore: bump version"
               git push origin version-branch:main
