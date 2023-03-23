@@ -2,8 +2,9 @@ name: Run Node function and create file
 
 on:
    push:
-      branches:
-         - main
+      branches: [main]
+
+permissions: write-all
 
 jobs:
    build:
