@@ -28,8 +28,8 @@ jobs:
          - name: Commit changes
            run: |
               git switch -c version-branch
-              git config --global user.email "you@example.com"
-              git config --global user.name "Your Name"
+              git config --global user.email "test@zesty.io"
+              git config --global user.name "Zesty Test"
               git add .
-              git commit --allow-empty -m ":rocket: chore: bump version"
+              git commit --allow-empty -m ":rocket: chore: bump "
               git push origin version-branch:main
