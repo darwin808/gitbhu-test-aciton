@@ -1,0 +1,33 @@
+name: Run Node function and create file
+
+on:
+   push:
+      branches:
+         - main
+
+jobs:
+   build:
+      runs-on: ubuntu-latest
+
+      steps:
+         - name: Checkout code
+           uses: actions/checkout@v2
+
+         - name: Use Node.js
+           uses: actions/setup-node@v3
+           with:
+              node-version: "16.x"
+
+         - name: Install dependencies
+           run: npm install axios
+
+         - name: Run Node function and create file
+           run: node Postman\ Collections/transformer.js
+
+         - name: Commit changes
+           run: |
+              git config --global user.email "you@example.com"
+              git config --global user.name "Your Name"
+              git add test/your-file.txt
+              git commit -m "Add file from GitHub Actions"
+              git push
